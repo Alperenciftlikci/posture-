@@ -7,7 +7,7 @@ Served with GitHub Pages from the `main` branch, root folder.
 |---|---|
 | `index.html` | Marketing page |
 | `privacy-policy.html` | Privacy Policy — linked from the App Store listing and from inside the app |
-| `terms.html` | Terms of Use — required next to any auto-renewing subscription |
+| `safety.html` | Health & Safety notice (Terms of Use = Apple standard EULA) |
 | `support.html` | Support URL — required by App Store Connect |
 
 The privacy policy describes the app's actual data flow: the posture photo is

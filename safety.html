@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Health &amp; Safety — Lumba</title>
+<meta name="description" content="How to use Lumba safely, who should check with a doctor first, and exactly how the posture score is calculated." />
+<meta name="theme-color" content="#0B0B0D" />
+<link rel="icon" href="icon.png" />
+<style>
+  :root { --green:#2BD46B; --amber:#FF9500; --bg:#0B0B0D; --surface:#16171A;
+          --text:#F2F4F7; --muted:#9AA0A8; --sep:#24262B; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
+         background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:820px; margin:0 auto; padding:0 24px; }
+  a { color:var(--green); }
+  header { border-bottom:1px solid var(--sep); }
+  .nav { display:flex; align-items:center; gap:14px; height:64px; }
+  .nav img { width:30px; height:30px; border-radius:8px; }
+  .brand { font-weight:800; font-size:18px; }
+  .nav .spacer { flex:1; }
+  .nav a { color:var(--muted); font-size:15px; text-decoration:none; }
+  h1 { font-size:clamp(28px,5vw,40px); letter-spacing:-1px; font-weight:850; margin:48px 0 8px; }
+  .muted { color:var(--muted); font-size:15px; }
+  h2 { font-size:21px; font-weight:750; margin:38px 0 10px; letter-spacing:-.3px; }
+  p, li { color:#D6DBE0; margin-bottom:10px; }
+  ul { margin:8px 0 14px 22px; }
+  .warn { border-left:3px solid var(--amber); background:rgba(255,149,0,.06);
+          border-radius:0 12px 12px 0; padding:16px 0 16px 18px; margin:22px 0; }
+  .key { border-left:3px solid var(--green); background:rgba(43,212,107,.06);
+         border-radius:0 12px 12px 0; padding:16px 0 16px 18px; margin:22px 0; }
+  table { width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:15px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--sep); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  footer { border-top:1px solid var(--sep); margin-top:56px; padding:28px 0 52px;
+           color:var(--muted); font-size:14px; }
+  .flinks { display:flex; flex-wrap:wrap; gap:18px; margin-bottom:12px; }
+  .flinks a { text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img src="icon.png" alt="Lumba" />
+    <span class="brand">Lumba</span>
+    <span class="spacer"></span>
+    <a href="index.html">Home</a>
+    <a href="privacy-policy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Health &amp; Safety</h1>
+  <p class="muted">Last updated: 14 August 2026 · Applies to Lumba for iPhone</p>
+
+  <div class="warn">
+    <strong>Lumba is not a medical device.</strong> It gives general exercise guidance. It does not
+    diagnose anything and it does not replace a doctor or a physiotherapist. Stop exercising and seek
+    medical advice if you feel sharp pain, numbness, tingling, weakness, dizziness, or if your
+    symptoms get worse.
+  </div>
+
+  <h2>Who should check with a professional first</h2>
+  <p>Please get clearance from a healthcare professional before starting the programme if you:</p>
+  <ul>
+    <li>are pregnant, or have given birth in the last six months;</li>
+    <li>have had surgery in the last six months;</li>
+    <li>have osteoporosis, a diagnosed spinal condition, or a disc injury;</li>
+    <li>have numbness, tingling or weakness in an arm or leg;</li>
+    <li>have pain that wakes you at night, or that followed a fall or accident;</li>
+    <li>have any change in bladder or bowel control.</li>
+  </ul>
+  <p>
+    The app asks about these during setup. If you tell it one applies to you, it will say so — please
+    take that seriously rather than skipping past it.
+  </p>
+
+  <h2>Exercising safely</h2>
+  <ul>
+    <li>Work within a pain-free range. "No pain, no gain" does not apply to back rehabilitation.</li>
+    <li>Use the <strong>Too hard</strong> control during a session — the plan adjusts rather than pushing you.</li>
+    <li>Move slowly and breathe. If you are holding your breath, the movement is too hard.</li>
+    <li>Lumba cannot see you. It cannot tell whether your form is correct or whether an exercise suits your condition.</li>
+    <li>Mild muscle fatigue the next day is normal. Sharp, radiating or worsening pain is not — stop and get it looked at.</li>
+  </ul>
+
+  <h2>How the posture score is calculated</h2>
+  <p>
+    You take one side-profile photo. Apple's Vision framework, running entirely on your iPhone,
+    locates body landmarks and the app measures four values from them. Each is scored out of 100 and
+    the four are averaged into your total.
+  </p>
+  <table>
+    <tr><th>Category</th><th>What is measured</th><th>100 points</th><th>0 points</th></tr>
+    <tr><td>Head position</td><td>Craniovertebral angle</td><td>50° or more</td><td>40° or less</td></tr>
+    <tr><td>Shoulders</td><td>Ear-to-shoulder offset ÷ torso height</td><td>0%</td><td>15% or more</td></tr>
+    <tr><td>Upper back</td><td>Shoulder-to-hip line vs vertical</td><td>5° or less</td><td>15° or more</td></tr>
+    <tr><td>Pelvis</td><td>Hip-knee-ankle line vs vertical</td><td>0°</td><td>12° or more</td></tr>
+  </table>
+  <div class="key">
+    The scan detail screen inside the app shows you each measured value next to its target, so the
+    number is never a black box.
+  </div>
+
+  <h2>What the score is and is not</h2>
+  <p>
+    It is an in-app indicator for comparing <em>your own</em> scans over time. It is affected by your
+    clothing, the camera angle, the lighting and how you happened to stand in that moment.
+  </p>
+  <p>
+    It is <strong>not</strong> a clinical assessment, not a diagnosis, and not comparable to another
+    person's score. A low score does not mean something is wrong with you, and a high score does not
+    mean you have no risk of back pain.
+  </p>
+
+  <h2>Legal terms</h2>
+  <p>
+    Your use of the app is governed by Apple's
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard End User
+    License Agreement</a>, and by our <a href="privacy-policy.html">Privacy Policy</a>.
+  </p>
+
+  <h2>Questions</h2>
+  <p>
+    Anything unclear here, write to <a href="mailto:lumba.app@gmail.com">lumba.app@gmail.com</a>.
+  </p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
+      <a href="support.html">Support</a>
+    </div>
+    <div>© 2026 Lumba. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
