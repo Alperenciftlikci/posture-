@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — Lumba</title>
+<meta name="description" content="How Lumba handles your data. Your posture photo is analysed on your device and never uploaded." />
+<meta name="theme-color" content="#0B0B0D" />
+<link rel="icon" href="icon.png" />
+<style>
+  :root { --green:#2BD46B; --amber:#FF9500; --bg:#0B0B0D; --surface:#16171A;
+          --text:#F2F4F7; --muted:#9AA0A8; --sep:#24262B; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,sans-serif;
+         background:var(--bg); color:var(--text); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:820px; margin:0 auto; padding:0 24px; }
+  a { color:var(--green); }
+  header { border-bottom:1px solid var(--sep); }
+  .nav { display:flex; align-items:center; gap:14px; height:64px; }
+  .nav img { width:30px; height:30px; border-radius:8px; }
+  .brand { font-weight:800; font-size:18px; }
+  .nav .spacer { flex:1; }
+  .nav a { color:var(--muted); font-size:15px; text-decoration:none; }
+  h1 { font-size:clamp(28px,5vw,40px); letter-spacing:-1px; font-weight:850; margin:48px 0 8px; }
+  .muted { color:var(--muted); font-size:15px; }
+  h2 { font-size:21px; font-weight:750; margin:38px 0 10px; letter-spacing:-.3px; }
+  h3 { font-size:17px; font-weight:700; margin:22px 0 6px; }
+  p, li { color:#D6DBE0; margin-bottom:10px; }
+  ul { margin:8px 0 14px 22px; }
+  .box { background:var(--surface); border:1px solid var(--sep); border-radius:16px;
+         padding:22px; margin:22px 0; }
+  .key { border-left:3px solid var(--green); background:rgba(43,212,107,.06);
+         border-radius:0 12px 12px 0; padding:16px 0 16px 18px; margin:22px 0; }
+  .warn { border-left:3px solid var(--amber); background:rgba(255,149,0,.06);
+          border-radius:0 12px 12px 0; padding:16px 0 16px 18px; margin:22px 0; }
+  table { width:100%; border-collapse:collapse; margin:14px 0 20px; font-size:15px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--sep); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:13px; text-transform:uppercase; letter-spacing:.5px; }
+  footer { border-top:1px solid var(--sep); margin-top:56px; padding:28px 0 52px;
+           color:var(--muted); font-size:14px; }
+  .flinks { display:flex; flex-wrap:wrap; gap:18px; margin-bottom:12px; }
+  .flinks a { text-decoration:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img src="icon.png" alt="Lumba" />
+    <span class="brand">Lumba</span>
+    <span class="spacer"></span>
+    <a href="index.html">Home</a>
+    <a href="terms.html">Terms</a>
+    <a href="support.html">Support</a>
+  </div>
+</header>
+
+<div class="wrap">
+  <h1>Privacy Policy</h1>
+  <p class="muted">Last updated: 13 August 2026 · Applies to Lumba for iPhone</p>
+
+  <div class="key">
+    <strong>The short version.</strong> Your posture photo is analysed on your iPhone and is never
+    uploaded — there is no photo upload anywhere in the app. Your scans, pain logs and sessions stay
+    on your device. The only things that reach our servers are an anonymous ID and your subscription
+    status. We do not sell your data, and we do not use it for advertising.
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>
+    Lumba is developed and published by Alperen Çiftlikçi, an independent developer.
+    For any privacy question or request, write to
+    <a href="mailto:lumba.app@gmail.com">lumba.app@gmail.com</a>. We answer within 30 days.
+  </p>
+
+  <h2>2. Data that stays on your device</h2>
+  <p>
+    The following never leaves your iPhone. It is written to the app's private storage and is
+    encrypted by iOS while your device is locked.
+  </p>
+  <ul>
+    <li><strong>Posture scan photos</strong> — only if you choose to keep them for before/after comparison.</li>
+    <li><strong>Posture measurements</strong> — the angles read from the photo and the resulting scores.</li>
+    <li><strong>Your questionnaire answers</strong> — pain areas, severity, sitting hours, job type, activity level, sleep position, age range, height and weight.</li>
+    <li><strong>Pain log entries</strong>, completed sessions, streaks and badges.</li>
+  </ul>
+  <p>
+    Deleting the app removes all of it. You can also delete individual scans, or erase everything,
+    from inside the app.
+  </p>
+
+  <h2>3. How the posture scan works</h2>
+  <p>
+    You take one side-profile photo. The app uses Apple's Vision framework, which runs entirely on
+    your iPhone, to locate body landmarks (ear, shoulder, hip, knee, ankle) and calculate four angles
+    from them. Those angles become your score.
+  </p>
+  <div class="key">
+    The photo is never sent to us or to anyone else. There is no image upload path in the app at all.
+    If you decline to keep the photo, it is discarded after the measurement and only the numbers remain.
+  </div>
+
+  <h2>4. Data that leaves your device</h2>
+  <p>Very little, and none of it is health data:</p>
+  <table>
+    <tr><th>What</th><th>Why</th><th>Where</th></tr>
+    <tr>
+      <td>Anonymous user ID</td>
+      <td>So your subscription can be restored on a new device</td>
+      <td>Firebase (Google)</td>
+    </tr>
+    <tr>
+      <td>Account creation date</td>
+      <td>Support and abuse prevention</td>
+      <td>Firebase (Google)</td>
+    </tr>
+    <tr>
+      <td>Subscription status</td>
+      <td>To unlock paid features</td>
+      <td>Firebase (Google) · Apple</td>
+    </tr>
+    <tr>
+      <td>Your data-processing consent flag</td>
+      <td>So you are not asked again on a new device</td>
+      <td>Firebase (Google)</td>
+    </tr>
+  </table>
+  <p>
+    We use Firebase Anonymous Authentication. That means <strong>no email, no password, no name and
+    no sign-up</strong> — the app generates a random identifier for your device. We cannot tell who
+    you are from it.
+  </p>
+  <p>Analytics are disabled in this app. We do not use advertising SDKs or trackers.</p>
+
+  <h2>5. Camera</h2>
+  <p>
+    The camera is used only when you take a posture scan, and only for that photo. It is never used
+    in the background. iOS asks for your permission the first time; you can change it any time in
+    Settings → Lumba.
+  </p>
+
+  <h2>6. Apple Health</h2>
+  <p>
+    If you allow it, Lumba writes your completed exercise minutes to Apple Health so they count
+    toward your activity rings. <strong>Lumba only writes. It never reads anything from Health.</strong>
+    You can revoke this in the Health app at any time, and the app keeps working without it.
+  </p>
+
+  <h2>7. Notifications</h2>
+  <p>
+    If you allow notifications, we send session reminders at the time you choose, and optional
+    reminders to stand up if you told us you sit for long stretches. These are scheduled locally on
+    your device — we do not run a push server, and we do not know whether you opened them.
+  </p>
+
+  <h2>8. Purchases and subscriptions</h2>
+  <p>
+    Subscriptions are sold through Apple. Apple processes the payment; we never see your card details.
+    We receive from Apple only whether an active subscription exists. Manage or cancel any time in
+    iOS Settings → your name → Subscriptions.
+  </p>
+
+  <h2>9. Your consent to data processing</h2>
+  <p>
+    Before your first scan is analysed, the app asks you to confirm that you understand how the photo
+    is handled. You can decline — the scan simply will not run, and the rest of the app still works.
+    If you later want to withdraw consent, contact us and we will clear the stored flag.
+  </p>
+
+  <h2>10. Legal bases (GDPR)</h2>
+  <ul>
+    <li><strong>Consent</strong> — for the posture scan, Apple Health writing and notifications.</li>
+    <li><strong>Contract</strong> — for providing the app and managing your subscription.</li>
+    <li><strong>Legitimate interest</strong> — for keeping the service secure and preventing abuse.</li>
+  </ul>
+
+  <h2>11. Your rights</h2>
+  <p>
+    Depending on where you live, you may have the right to access, correct, delete or export your
+    data, and to object to processing. Because almost everything is on your device, you can exercise
+    most of these yourself: delete scans in the app, or delete the app to remove everything.
+  </p>
+  <p>
+    For the anonymous record on our servers, write to
+    <a href="mailto:lumba.app@gmail.com">lumba.app@gmail.com</a>. Please tell us your anonymous ID
+    (Profile → About) so we can find it. If you are in the EEA or UK you may also complain to your
+    local data protection authority.
+  </p>
+
+  <h2>12. How long we keep data</h2>
+  <ul>
+    <li><strong>On your device</strong> — until you delete it or remove the app.</li>
+    <li><strong>Anonymous record</strong> — while your account is active, then up to 12 months, then deleted.</li>
+    <li><strong>Purchase records</strong> — held by Apple under their own terms.</li>
+  </ul>
+
+  <h2>13. What we never do</h2>
+  <ul>
+    <li>We never upload your photos.</li>
+    <li>We never sell or rent your data.</li>
+    <li>We never use your data for advertising or profiling.</li>
+    <li>We never ask for your name, email or phone number.</li>
+    <li>We never share your health information with third parties.</li>
+  </ul>
+
+  <h2>14. Children</h2>
+  <p>
+    Lumba is not directed at children under 13, and we do not knowingly collect their data. If you
+    believe a child has used the app, contact us and we will remove any associated record.
+  </p>
+
+  <h2>15. Security</h2>
+  <p>
+    Local files are written with iOS complete file protection, meaning they are encrypted while your
+    device is locked. Traffic to our servers uses TLS. We use Firebase App Check to reduce abuse of
+    our backend.
+  </p>
+
+  <h2>16. Changes to this policy</h2>
+  <p>
+    If we change how we handle data, we will update this page and the date at the top. Material
+    changes will also be announced in the app.
+  </p>
+
+  <div class="warn">
+    <strong>Lumba is not a medical device.</strong> The posture score is an in-app indicator for
+    tracking your own change over time — it is not a clinical measurement, a diagnosis, or medical
+    advice. If you have severe or persistent pain, numbness, weakness, or a recent injury, please
+    consult a healthcare professional.
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:lumba.app@gmail.com">lumba.app@gmail.com</a>
+    </div>
+    <div>© 2026 Lumba. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

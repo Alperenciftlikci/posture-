@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lumba — Posture &amp; Back Pain</title>
+<meta name="description" content="Lumba measures your posture from one photo, on your device, and builds an 8-week corrective plan for your back. Your photo never leaves your phone." />
+<meta name="theme-color" content="#0B0B0D" />
+<meta property="og:title" content="Lumba — Posture &amp; Back Pain" />
+<meta property="og:description" content="Measure your posture from one photo and follow an 8-week plan. Ten minutes a day." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="icon.png" />
+<link rel="icon" href="icon.png" />
+<link rel="apple-touch-icon" href="icon.png" />
+<style>
+  :root {
+    --green: #2BD46B; --amber: #FF9500;
+    --bg: #0B0B0D; --surface: #16171A; --text: #F2F4F7; --muted: #9AA0A8; --sep: #24262B;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--green); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(14px);
+           background: rgba(11,11,13,.78); border-bottom: 1px solid var(--sep); }
+  .nav { display: flex; align-items: center; gap: 14px; height: 64px; }
+  .nav img { width: 32px; height: 32px; border-radius: 8px; }
+  .brand { font-weight: 800; font-size: 19px; letter-spacing: -.3px; }
+  .nav .spacer { flex: 1; }
+  .nav a { color: var(--muted); font-size: 15px; }
+  .nav a:hover { color: var(--text); text-decoration: none; }
+
+  .hero { padding: 88px 0 64px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; inset: -40% 20% auto; height: 420px;
+                  background: radial-gradient(closest-side, rgba(43,212,107,.18), transparent); }
+  .hero img.icon { width: 108px; height: 108px; border-radius: 24px; position: relative;
+                   box-shadow: 0 18px 50px rgba(43,212,107,.20); }
+  h1 { font-size: clamp(34px, 6vw, 54px); line-height: 1.08; letter-spacing: -1.4px;
+       font-weight: 850; margin: 26px 0 14px; position: relative; }
+  .grad { background: linear-gradient(90deg, var(--green), #7CF9A8);
+          -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { font-size: clamp(16px, 2.4vw, 20px); color: var(--muted); max-width: 620px;
+         margin: 0 auto; position: relative; }
+  .cta { display: inline-flex; align-items: center; gap: 9px; margin-top: 30px; padding: 15px 30px;
+         background: linear-gradient(90deg, var(--green), #17A84F); color: #04140A; font-weight: 750;
+         border-radius: 999px; position: relative; font-size: 16px; }
+  .cta:hover { text-decoration: none; filter: brightness(1.06); }
+  .note { margin-top: 12px; font-size: 13px; color: var(--muted); position: relative; }
+
+  section { padding: 64px 0; border-top: 1px solid var(--sep); }
+  h2 { font-size: clamp(24px, 3.4vw, 34px); letter-spacing: -.7px; font-weight: 800; margin-bottom: 10px; }
+  .lede { color: var(--muted); max-width: 640px; margin-bottom: 34px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; }
+  .card { background: var(--surface); border: 1px solid var(--sep); border-radius: 18px; padding: 24px; }
+  .card h3 { font-size: 18px; margin-bottom: 7px; font-weight: 700; }
+  .card p { color: var(--muted); font-size: 15px; }
+  .dot { width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center;
+         background: rgba(43,212,107,.13); margin-bottom: 14px; font-size: 19px; }
+
+  .phases { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
+  .phase { background: var(--surface); border: 1px solid var(--sep); border-radius: 18px; padding: 24px; }
+  .phase .wk { font-size: 13px; color: var(--green); font-weight: 700; letter-spacing: .4px; }
+  .phase h3 { font-size: 19px; margin: 6px 0 8px; font-weight: 750; }
+  .phase p { color: var(--muted); font-size: 15px; }
+
+  .band { background: linear-gradient(180deg, rgba(43,212,107,.07), transparent);
+          border: 1px solid rgba(43,212,107,.25); border-radius: 22px; padding: 34px; }
+  .band ul { list-style: none; margin-top: 16px; display: grid; gap: 10px; }
+  .band li { color: var(--muted); padding-left: 26px; position: relative; }
+  .band li::before { content: "✓"; position: absolute; left: 0; color: var(--green); font-weight: 800; }
+
+  .disc { margin-top: 26px; font-size: 14px; color: var(--muted); border-left: 3px solid var(--amber);
+          padding: 12px 0 12px 16px; background: rgba(255,149,0,.05); border-radius: 0 10px 10px 0; }
+
+  footer { border-top: 1px solid var(--sep); padding: 34px 0 54px; color: var(--muted); font-size: 14px; }
+  .flinks { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <img src="icon.png" alt="Lumba" />
+    <span class="brand">Lumba</span>
+    <span class="spacer"></span>
+    <a href="#features">Features</a>
+    <a href="#program">Program</a>
+    <a href="#privacy">Privacy</a>
+    <a href="support.html">Support</a>
+  </div>
+</header>
+
+<div class="wrap hero">
+  <img class="icon" src="icon.png" alt="Lumba app icon" />
+  <h1>Measure your posture.<br /><span class="grad">Then change it.</span></h1>
+  <p class="sub">
+    One side photo, analysed on your device, gives you a posture score and an
+    8-week corrective plan built around where your back actually hurts.
+  </p>
+  <a class="cta" href="#">Coming soon to the App Store</a>
+  <p class="note">iPhone · iOS 17 or later · No account required</p>
+</div>
+
+<section id="features">
+  <div class="wrap">
+    <h2>What Lumba does</h2>
+    <p class="lede">Most posture advice is generic. Lumba starts by measuring you, then gives you a short routine you can actually keep up.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="dot">📐</div>
+        <h3>A real measurement</h3>
+        <p>One side photo. Your phone reads head position, shoulders, upper back and pelvis, and scores each out of 100.</p>
+      </div>
+      <div class="card">
+        <div class="dot">🔒</div>
+        <h3>Analysed on your device</h3>
+        <p>The photo is processed on your iPhone with Apple's Vision framework. It is never uploaded, and it never leaves your phone.</p>
+      </div>
+      <div class="card">
+        <div class="dot">🎯</div>
+        <h3>Built around your pain</h3>
+        <p>Mark where it hurts on the body map and your plan targets those areas — neck, upper back, lower back or hips.</p>
+      </div>
+      <div class="card">
+        <div class="dot">⏱️</div>
+        <h3>Ten minutes a day</h3>
+        <p>Short guided sessions with clear animations. No equipment needed, no gym, no brace.</p>
+      </div>
+      <div class="card">
+        <div class="dot">📈</div>
+        <h3>See the change</h3>
+        <p>Rescan each week and compare side by side. Your score, your pain log and your streak in one place.</p>
+      </div>
+      <div class="card">
+        <div class="dot">🧘</div>
+        <h3>45+ exercises</h3>
+        <p>Breathing, mobility, stretching and strength — each with a guided animation and clear form cues.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="program">
+  <div class="wrap">
+    <h2>Eight weeks, three phases</h2>
+    <p class="lede">Each phase builds on the one before it. The plan adapts to your activity level, flexibility and how much time you have.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="wk">WEEK 1–2</div>
+        <h3>Calm</h3>
+        <p>Ease symptoms and rebuild trust in movement. Breathing, gentle mobility, no load.</p>
+      </div>
+      <div class="phase">
+        <div class="wk">WEEK 3–5</div>
+        <h3>Stabilize</h3>
+        <p>Deep core and shoulder-blade control — the muscles that hold your posture when you stop thinking about it.</p>
+      </div>
+      <div class="phase">
+        <div class="wk">WEEK 6–8</div>
+        <h3>Strengthen</h3>
+        <p>Build endurance for daily load: sitting, lifting, carrying, driving.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <div class="band">
+      <h2>Your photo stays on your phone</h2>
+      <p class="lede" style="margin-bottom:0">We designed the scan so there is nothing to leak.</p>
+      <ul>
+        <li>Posture analysis runs entirely on your iPhone — there is no photo upload anywhere in the app.</li>
+        <li>Scans, pain logs, sessions and badges are stored on your device, encrypted while your phone is locked.</li>
+        <li>The only thing that reaches our servers is an anonymous ID and your subscription status.</li>
+        <li>You can delete your scans at any time, and deleting the app removes everything with it.</li>
+      </ul>
+    </div>
+    <div class="disc">
+      <strong>Not a medical device.</strong> The posture score is an in-app indicator for tracking your own change over time — it is not a clinical measurement or a diagnosis. Lumba provides general exercise guidance, not medical advice. If you have severe or persistent pain, numbness, or a recent injury, please see a healthcare professional.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Use</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:lumba.app@gmail.com">lumba.app@gmail.com</a>
+    </div>
+    <div>© 2026 Lumba. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
