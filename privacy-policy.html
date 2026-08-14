@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Privacy Policy — Lumba</title>
-<meta name="description" content="How Lumba handles your data. Your posture photo is analysed on your device and never uploaded." />
+<meta name="description" content="How Lumba handles your data. Your posture is measured on your device; a photo only leaves your phone if you ask for the before/after preview." />
 <meta name="theme-color" content="#0B0B0D" />
 <link rel="icon" href="icon.png" />
 <style>
@@ -58,13 +58,14 @@
 
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: 13 August 2026 · Applies to Lumba for iPhone</p>
+  <p class="muted">Last updated: 14 August 2026 · Applies to Lumba for iPhone</p>
 
   <div class="key">
-    <strong>The short version.</strong> Your posture photo is analysed on your iPhone and is never
-    uploaded — there is no photo upload anywhere in the app. Your scans, pain logs and sessions stay
-    on your device. The only things that reach our servers are an anonymous ID and your subscription
-    status. We do not sell your data, and we do not use it for advertising.
+    <strong>The short version.</strong> Your posture is measured on your iPhone. Taking a scan never
+    sends your photo anywhere. One optional feature — the before/after preview — sends that single
+    photo to Google to generate the image, and only after you agree. Your scans, pain logs and
+    sessions stay on your device. The only things that reach our own servers are an anonymous ID and
+    your subscription status. We do not sell your data, and we do not use it for advertising.
   </div>
 
   <h2>1. Who we are</h2>
@@ -94,11 +95,13 @@
   <p>
     You take one side-profile photo. The app uses Apple's Vision framework, which runs entirely on
     your iPhone, to locate body landmarks (ear, shoulder, hip, knee, ankle) and calculate four angles
-    from them. Those angles become your score.
+    from them. Those angles become your score. The score is arithmetic, not a guess: the same photo
+    always produces the same number.
   </p>
   <div class="key">
-    The photo is never sent to us or to anyone else. There is no image upload path in the app at all.
-    If you decline to keep the photo, it is discarded after the measurement and only the numbers remain.
+    The measurement itself never sends the photo anywhere. If you decline to keep the photo, it is
+    discarded after the measurement and only the numbers remain. See section 5 for the one feature
+    that does send a photo, and section 4a for the reading written from your numbers.
   </div>
 
   <h2>4. Data that leaves your device</h2>
@@ -125,6 +128,16 @@
       <td>So you are not asked again on a new device</td>
       <td>Firebase (Google)</td>
     </tr>
+    <tr>
+      <td>Your four measured angles and questionnaire answers</td>
+      <td>To write your personalised reading (section 4a)</td>
+      <td>Google Gemini, via Firebase AI Logic</td>
+    </tr>
+    <tr>
+      <td>One scan photo — only if you ask for a before/after preview</td>
+      <td>To generate that image (section 4b)</td>
+      <td>Google Gemini, via Firebase AI Logic</td>
+    </tr>
   </table>
   <p>
     We use Firebase Anonymous Authentication. That means <strong>no email, no password, no name and
@@ -132,6 +145,33 @@
     you are from it.
   </p>
   <p>Analytics are disabled in this app. We do not use advertising SDKs or trackers.</p>
+
+  <h2>4a. The reading written from your measurements</h2>
+  <p>
+    After a scan, Lumba turns your four measured angles into a short personalised explanation. To do
+    that it sends <strong>the numbers only</strong> — the four angles, your total score, your
+    programme week and the questionnaire answers you gave — to Google's Gemini model through Firebase
+    AI Logic. <strong>Your photo is not part of this request.</strong> If the request fails or you
+    have AI turned off, the app falls back to its built-in text and nothing is sent.
+  </p>
+
+  <h2>4b. The before/after preview (the one feature that sends a photo)</h2>
+  <p>
+    If you ask for a before/after preview, Lumba sends that single scan photo to Google's Gemini
+    image model, again through Firebase AI Logic, to draw what corrected posture could look like.
+    This is the only place in the app where a photo leaves your device.
+  </p>
+  <ul>
+    <li>It never happens automatically — you have to ask for it.</li>
+    <li>We ask for your agreement before the first time, and you can decline. The rest of the app keeps working.</li>
+    <li>Google processes the image to generate the result and does not keep it. Under Firebase AI Logic terms your content is not used to train Google's models.</li>
+    <li>We never receive or store the photo on our own servers.</li>
+    <li>The generated image is an illustration, not a prediction or a promise of results.</li>
+  </ul>
+  <div class="key">
+    You can avoid this entirely: simply never open the before/after preview, or decline when asked.
+    Your scans, scores and programme all work without it.
+  </div>
 
   <h2>5. Camera</h2>
   <p>
@@ -170,7 +210,7 @@
 
   <h2>10. Legal bases (GDPR)</h2>
   <ul>
-    <li><strong>Consent</strong> — for the posture scan, Apple Health writing and notifications.</li>
+    <li><strong>Consent</strong> — for the posture scan, the before/after preview, Apple Health writing and notifications.</li>
     <li><strong>Contract</strong> — for providing the app and managing your subscription.</li>
     <li><strong>Legitimate interest</strong> — for keeping the service secure and preventing abuse.</li>
   </ul>
@@ -197,7 +237,8 @@
 
   <h2>13. What we never do</h2>
   <ul>
-    <li>We never upload your photos.</li>
+    <li>We never upload your photos for the measurement, and never in the background.</li>
+    <li>We never send a photo anywhere unless you ask for the before/after preview and agree to it.</li>
     <li>We never sell or rent your data.</li>
     <li>We never use your data for advertising or profiling.</li>
     <li>We never ask for your name, email or phone number.</li>
